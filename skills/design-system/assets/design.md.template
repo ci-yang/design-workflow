@@ -1,0 +1,62 @@
+# Design Specification
+
+## Overview
+
+- **Figma 檔案**: {FIGMA_URL}
+- **Prototype 目錄**: .specify/specs/{FEATURE}/design/prototype/
+- **設計風格**: {DESIGN_CONCEPT_NAME}
+- **建立時間**: {TIMESTAMP}
+
+## Page Mapping
+
+| 編號 | 頁面名稱 | Prototype | Figma Page | Node ID | User Story |
+|------|----------|-----------|------------|---------|------------|
+| 01 | Landing | 01-landing.html | 01-Landing | {NODE_ID} | - |
+| 02 | Dashboard | 02-dashboard.html | 02-Dashboard | {NODE_ID} | US5 |
+<!-- 繼續填入其他頁面 -->
+
+## Design Decisions
+
+### 已確認保留
+
+| 項目 | 說明 | 來源 |
+|------|------|------|
+<!-- 從 audit-report 填入 -->
+
+### 標記為 Future
+
+| 項目 | 說明 | 預計版本 |
+|------|------|----------|
+<!-- 從 audit-report 填入 -->
+
+## Component Mapping
+
+| Component | Figma Location | 用途 |
+|-----------|----------------|------|
+| Header | Components > Header | 全域導覽列 |
+<!-- 填入共用元件 -->
+
+## Design Tokens
+
+參考 Figma Variables：
+
+| Token | Light | Dark | 用途 |
+|-------|-------|------|------|
+| --color-primary | {VALUE} | {VALUE} | 主色 |
+| --color-background | {VALUE} | {VALUE} | 背景色 |
+| --color-surface | {VALUE} | {VALUE} | 表面色 |
+| --color-text-primary | {VALUE} | {VALUE} | 主要文字 |
+| --color-text-secondary | {VALUE} | {VALUE} | 次要文字 |
+
+## Implementation Notes
+
+### 優先順序
+
+1. **P1 - 核心頁面**: {LIST}
+2. **P2 - 流程頁面**: {LIST}
+3. **P3 - 狀態頁面**: {LIST}
+
+### 注意事項
+
+- {NOTE_1}
+- {NOTE_2}
