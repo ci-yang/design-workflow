@@ -1,6 +1,6 @@
 # Design Workflow
 
-**前端設計工作流程** - Claude Code Skills & Commands for Design-to-Development
+**Claude Code Plugin** - 前端設計工作流程 Skills & Commands
 
 將設計流程標準化：從 spec 到 HTML Prototype，再到 Figma 整合，最後驗證開發任務的設計引用。
 
@@ -10,7 +10,7 @@
 - **設計審查** - 比對 Prototype vs Spec，找出差異
 - **Figma 整合** - 建立 Prototype 與 Figma 的對應表
 - **驗證機制** - 確保 plan.md 和 tasks.md 正確引用設計資源
-- **可自訂規則** - Skills 提供參考文件和模板
+- **Plugin 格式** - 符合 Claude Code 官方 Plugin 規範
 
 ## 工作流程
 
@@ -37,30 +37,30 @@
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## 快速安裝
+## 安裝方式
 
-### 方式 1: Clone 後安裝
+### 方式 1: Plugin 安裝（推薦）
 
 ```bash
+# Clone 並安裝為 Plugin
 git clone https://github.com/ci-yang/design-workflow.git
 cd design-workflow
-./install.sh /path/to/your/project
+./install.sh
+
+# 或一行安裝
+curl -fsSL https://raw.githubusercontent.com/ci-yang/design-workflow/main/install.sh | bash
 ```
 
-### 方式 2: 一行安裝
+安裝到 `~/.claude/plugins/design-workflow/`，所有專案皆可使用。
+
+### 方式 2: Legacy 安裝（專案獨立）
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ci-yang/design-workflow/main/install.sh | bash -s -- /path/to/project
+# 安裝到特定專案
+./install.sh --legacy /path/to/your/project
 ```
 
-### 安裝選項
-
-```bash
-./install.sh                      # 基本安裝
-./install.sh --docs               # 包含工作流文件
-./install.sh --force              # 覆蓋現有檔案
-./install.sh --update             # 更新模式（保留自訂內容）
-```
+安裝到專案的 `.claude/` 目錄，僅該專案可用。
 
 ## 指令說明
 
@@ -114,45 +114,36 @@ specs/{feature}/design/
 /design.verify --fix        # 自動修復
 ```
 
+## Plugin 結構
+
+```
+design-workflow/
+├── .claude-plugin/
+│   └── plugin.json         # Plugin 元資料
+├── commands/
+│   ├── design.prototype.md
+│   ├── design.audit.md
+│   ├── design.mapping.md
+│   └── design.verify.md
+├── skills/
+│   ├── design-system/
+│   │   ├── SKILL.md
+│   │   ├── references/
+│   │   └── assets/
+│   ├── design-audit/
+│   │   └── SKILL.md
+│   └── design-prototype/
+│       └── SKILL.md
+└── docs/
+    └── design-workflow.md
+```
+
 ## 前置條件
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
 - spec.md（Phase 1 產出）
 - plan.md（Phase 2 產出，驗證時需要）
 - Figma MCP Server（Step 3-4 需要）
-
-## 目錄結構
-
-安裝後的專案結構：
-
-```
-your-project/
-└── .claude/
-    ├── commands/
-    │   ├── design.prototype.md
-    │   ├── design.audit.md
-    │   ├── design.mapping.md
-    │   └── design.verify.md
-    ├── skills/
-    │   ├── design-system/
-    │   │   ├── SKILL.md
-    │   │   ├── references/
-    │   │   │   ├── ui-ux-guidelines.md
-    │   │   │   ├── prototype-patterns.md
-    │   │   │   ├── audit-rules.md
-    │   │   │   ├── figma-mapping.md
-    │   │   │   └── verification-rules.md
-    │   │   └── assets/
-    │   │       ├── audit-report.template.md
-    │   │       └── design.md.template
-    │   ├── design-audit/
-    │   │   ├── SKILL.md
-    │   │   └── references/
-    │   └── design-prototype/
-    │       ├── SKILL.md
-    │       └── references/
-    └── DESIGN-WORKFLOW.md
-```
 
 ## 自訂規則
 

@@ -1,0 +1,9 @@
+{
+  "name": "design-workflow",
+  "version": "1.0.0",
+  "description": "Design Workflow - HTML Prototype, Audit, Figma Mapping, and Verification for SDD",
+  "author": "ci-yang",
+  "repository": "https://github.com/ci-yang/design-workflow",
+  "keywords": ["design", "prototype", "figma", "audit", "sdd", "workflow"],
+  "homepage": "https://github.com/ci-yang/design-workflow"
+}
